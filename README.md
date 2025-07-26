@@ -1,1 +1,1 @@
-README.md dosyasına şunu yaz: "ChatGPT için hazır."
+ChatGPT için hazır.
