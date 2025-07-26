@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Ana nokta -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#64FFDA" />
+            <size android:width="10dp" android:height="10dp" />
+        </shape>
+    </item>
+
+    <!-- Işıltı efekti -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="100%p"
+                android:startColor="#6064FFDA"
+                android:endColor="#0064FFDA" />
+            <size android:width="14dp" android:height="14dp" />
+        </shape>
+    </item>
+</layer-list>

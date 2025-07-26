@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dış ışıltı -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="100%p"
+                android:startColor="#304481EA"
+                android:endColor="#00000000" />
+            <size android:width="200dp" android:height="200dp" />
+        </shape>
+    </item>
+
+    <!-- Dış çizgi -->
+    <item android:left="5dp" android:top="5dp" android:right="5dp" android:bottom="5dp">
+        <shape android:shape="oval">
+            <stroke android:color="#4481EA" android:width="1.5dp" />
+        </shape>
+    </item>
+
+    <!-- İç daire arka plan -->
+    <item android:left="20dp" android:top="20dp" android:right="20dp" android:bottom="20dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#162540"
+                android:centerColor="#0F1C31"
+                android:endColor="#071428"
+                android:angle="135" />
+        </shape>
+    </item>
+
+    <!-- İç daire kenar -->
+    <item android:left="20dp" android:top="20dp" android:right="20dp" android:bottom="20dp">
+        <shape android:shape="oval">
+            <stroke android:color="#4481EA" android:width="1.5dp" />
+        </shape>
+    </item>
+
+    <!-- Üst ışıltı -->
+    <item android:left="30dp" android:top="20dp" android:right="30dp" android:bottom="100dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#804481EA"
+                android:endColor="#00000000"
+                android:angle="270" />
+        </shape>
+    </item>
+</layer-list>

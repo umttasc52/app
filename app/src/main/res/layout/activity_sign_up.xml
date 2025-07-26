@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignUpActivity">
+
+    <!-- Ana arka plan -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backrondz"
+        android:scaleType="centerCrop" />
+
+    <!-- Blockchain pattern overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/blockchain_grid_overlay"
+        android:alpha="0.15" />
+
+    <!-- Profesyonel çerçeve border -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/crypto_frame_border" />
+
+    <!-- Üst ışık efekti -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/crypto_top_glow" />
+
+    <!-- Başlık metni -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/create_account"
+        android:textColor="#64FFDA"
+        android:textSize="35sp"
+        android:fontFamily="@font/font1"
+        android:shadowColor="#80000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3" />
+
+    <!-- Alt başlık -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/app_name"
+        android:textColor="#E2F0FF"
+        android:textSize="16sp"
+        android:fontFamily="@font/font1" />
+
+    <!-- Form içeriği -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="70dp">
+
+        <!-- İsim girişi -->
+        <EditText
+            android:id="@+id/name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/crypto_edittext_bg"
+            android:drawableStart="@drawable/name"
+            android:drawableTint="#64FFDA"
+            android:drawablePadding="19dp"
+            android:ems="10"
+            android:textSize="18sp"
+            android:hint="@string/your_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="#E2F0FF"
+            android:textColorHint="#80E2F0FF"
+            android:fontFamily="@font/font1" />
+
+        <!-- E-mail girişi -->
+        <EditText
+            android:id="@+id/email_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/crypto_edittext_bg"
+            android:drawableStart="@drawable/email"
+            android:drawableTint="#64FFDA"
+            android:drawablePadding="19dp"
+            android:textSize="18sp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="#E2F0FF"
+            android:textColorHint="#80E2F0FF"
+            android:fontFamily="@font/font1" />
+
+        <!-- Şifre girişi -->
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/crypto_edittext_bg"
+            android:drawableStart="@drawable/password"
+            android:drawableTint="#64FFDA"
+            android:drawablePadding="19dp"
+            android:textSize="18sp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="#E2F0FF"
+            android:textColorHint="#80E2F0FF"
+            android:fontFamily="@font/font1" />
+
+        <!-- Kayıt ol butonu -->
+        <Button
+            android:id="@+id/signupBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/crypto_button_bg"
+            android:textColor="#E2F0FF"
+            android:text="@string/sign_up"
+            android:textSize="18sp"
+            android:fontFamily="@font/font1"
+            android:textAllCaps="false" />
+
+        <!-- Giriş yap linki -->
+        <TextView
+            android:id="@+id/signInBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/font1"
+            android:text="@string/have_account_login"
+            android:textColor="#64FFDA"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Dekoratif çizgiler -->
+    <View
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:background="#4064FFDA"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="3dp"
+        android:background="#4064FFDA"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp" />
+</RelativeLayout>

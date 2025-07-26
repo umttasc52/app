@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.WelcomeActivity">
+
+    <!-- Ana arka plan -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backrondz"
+        android:scaleType="centerCrop" />
+
+    <!-- Blockchain pattern overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/blockchain_grid_overlay"
+        android:alpha="0.15" />
+
+    <!-- Profesyonel çerçeve border -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/crypto_frame_border" />
+
+    <!-- Üst dekoratif ışık efekti -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/crypto_top_glow"
+        android:alpha="0.7" />
+
+    <!-- Başlık metni -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/app_name"
+        android:textColor="#64FFDA"
+        android:textSize="40sp"
+        android:fontFamily="@font/font1"
+        android:shadowColor="#80000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4" />
+
+    <!-- Alt başlık -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:text="BLOCKCHAIN PUZZLE ADVENTURE"
+        android:textColor="#E2F0FF"
+        android:textSize="16sp"
+        android:fontFamily="@font/font1" />
+
+    <!-- Logo alanı -->
+    <FrameLayout
+        android:id="@+id/logo_container"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/crypto_logo_frame">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/app_logo"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+
+        <!-- Logo etrafında hareketli efekt için noktalar -->
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_gravity="center"
+            android:src="@drawable/crypto_orbit_dots"
+            android:alpha="0.8" />
+    </FrameLayout>
+
+    <!-- Alt butonlar panel arkaplanı -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/crypto_bottom_panel" />
+
+    <!-- Login butonu -->
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_above="@id/signupBtn"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/crypto_button_bg"
+        android:textColor="#E2F0FF"
+        android:text="@string/login"
+        android:textSize="18sp"
+        android:fontFamily="@font/font1"
+        android:textAllCaps="false" />
+
+    <!-- Signup butonu -->
+    <Button
+        android:id="@+id/signupBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/sign_up"
+        android:textColor="#E2F0FF"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/crypto_button_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/font1"
+        android:textAllCaps="false" />
+
+    <!-- Dekoratif alt çizgiler -->
+    <View
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:background="#4064FFDA"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="40dp" />
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="3dp"
+        android:background="#4064FFDA"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp" />
+</RelativeLayout>

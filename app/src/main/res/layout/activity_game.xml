@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.GameActivity">
+
+    <!-- Ana arka plan - tüm ekranı kaplıyor -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backrondz"
+        android:scaleType="centerCrop" />
+
+    <!-- Blockchain pattern overlay - subtle grid lines -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:alpha="0.15" />
+
+    <!-- Üst kısım için overlay - içeriğe uygun parlak ton -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/header_gradient"
+        android:alpha="0.3" />
+
+    <!-- Lightning effect overlay (controlled by Java) -->
+    <View
+        android:id="@+id/lightning_effect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4527A0"
+        android:alpha="0.0" />
+
+    <LinearLayout
+        android:id="@+id/top_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <!-- Score container -->
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:orientation="vertical"
+            android:background="@drawable/crypto_button_bg"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/scoreTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/score"
+                android:textSize="14sp"
+                android:textColor="#E2F0FF"
+                android:gravity="center"
+                android:fontFamily="@font/font2"/>
+        </LinearLayout>
+
+        <!-- Level container -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:background="@drawable/crypto_circle_button_bg"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/levelTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/zero"
+                android:textSize="24sp"
+                android:textColor="#64FFDA"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/font2"/>
+        </LinearLayout>
+
+        <!-- Moves container -->
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:orientation="vertical"
+            android:background="@drawable/crypto_button_bg"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/moveTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/move"
+                android:textSize="14sp"
+                android:textColor="#E2F0FF"
+                android:gravity="center"
+                android:fontFamily="@font/font2"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/top_stats"
+        android:layout_above="@id/adView"/>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"/>
+
+    <com.applovin.mediation.ads.MaxAdView
+        xmlns:maxads="http://schemas.applovin.com/android/1.0"
+        android:id="@+id/MaxAdView"
+        maxads:adUnitId="YOUR_ID_HERE"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+</RelativeLayout>

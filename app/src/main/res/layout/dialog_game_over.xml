@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="#00000000">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/crypto_dialog_bg">
+
+        <!-- Üst başlık kısmı -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:text="GAME OVER"
+                android:textColor="#FF5252"
+                android:textSize="18sp"
+                android:fontFamily="@font/font1" />
+
+            <ImageButton
+                android:id="@+id/bt_close"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close"
+                app:tint="#64FFDA"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+        <!-- Çizgi ayırıcı -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#304481EA" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:background="@drawable/crypto_lose_circle">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/close_3d"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/you_lose"
+                android:textSize="24sp"
+                android:textColor="#FF5252"
+                android:gravity="center"
+                android:fontFamily="@font/font1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="@string/good_luck_next_time"
+                android:textColor="#E2F0FF"
+                android:fontFamily="@font/font1"/>
+
+            <!-- Dekoratif çizgi -->
+            <View
+                android:layout_width="80dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="#304481EA" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="@string/play_again"
+            android:background="@drawable/crypto_button_bg"
+            android:textColor="#E2F0FF"
+            android:textAllCaps="false"
+            android:fontFamily="@font/font1"
+            android:layout_margin="16dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

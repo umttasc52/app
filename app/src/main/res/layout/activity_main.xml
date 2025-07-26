@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Crypto theme background gradient instead of PNG background -->
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backrondz" />
+
+    <!-- Blockchain pattern overlay - subtle grid lines -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/blockchain_grid_overlay"
+        android:alpha="0.15" />
+
+    <!-- Lightning effect overlay (controlled by Java) -->
+    <View
+        android:id="@+id/lightning_effect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4527A0"
+        android:alpha="0.0" />
+
+    <TextView
+        android:id="@+id/appNameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/font1"
+        android:gravity="center"
+        android:text="Block Pop: Crypto Match"
+        android:textColor="#E2F0FF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:shadowColor="#4527A0"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3" />
+
+    <!-- Game Board - Board pulled up by reducing margins -->
+    <RelativeLayout
+        android:id="@+id/rl_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appNameTxt"
+        android:layout_above="@+id/adView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
+
+        <!-- Game board container with more padding to avoid cutoff -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/crypto_board_bg" />
+
+        <TextView
+            android:id="@+id/boardTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/game_board"
+            android:textSize="18sp"
+            android:textColor="#E2F0FF"
+            android:fontFamily="@font/font1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/boardTxt"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Points display with coin icon -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:background="@drawable/crypto_points_bg"
+                android:padding="8dp"
+                android:layout_marginBottom="10dp">
+
+                <!-- Crypto coin icon -->
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/crypto_coin_icon"
+                    android:contentDescription="Crypto coin" />
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="0dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_points"
+                    android:textSize="16sp"
+                    android:textColor="#E2F0FF"
+                    android:fontFamily="@font/font1"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"/>
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="0dp"/>
+
+                <TextView
+                    android:id="@+id/points_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="#64FFDA"
+                    android:fontFamily="@font/font1"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <!-- Buttons are directly placed without ScrollView - spacing reduced -->
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="260dp"
+                android:layout_height="58dp"
+                android:background="@drawable/crypto_button_play_bg"
+                android:text="@string/start_play"
+                android:textSize="22sp"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textColor="#E2F0FF"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/achievements_btn"
+                android:layout_width="260dp"
+                android:layout_height="55dp"
+                android:background="@drawable/crypto_button_bg"
+                android:text="@string/my_achievements"
+                android:textSize="17sp"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textColor="#E2F0FF"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/withdrawal_btn"
+                android:layout_width="260dp"
+                android:layout_height="55dp"
+                android:background="@drawable/crypto_button_bg"
+                android:text="@string/withdrawal"
+                android:textSize="17sp"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textColor="#E2F0FF"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/latestWithdrawal_btn"
+                android:layout_width="260dp"
+                android:layout_height="55dp"
+                android:background="@drawable/crypto_button_bg"
+                android:text="@string/latest_payments"
+                android:textSize="17sp"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textColor="#E2F0FF"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/feedback_btn"
+                android:layout_width="260dp"
+                android:layout_height="55dp"
+                android:background="@drawable/crypto_button_bg"
+                android:text="@string/toolbar_feedback"
+                android:textSize="17sp"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textColor="#E2F0FF"
+                android:layout_marginBottom="15dp"/>
+
+            <!-- Footer icons in circles, with proper spacing -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/crypto_circle_button_bg"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/share_btn"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_share_24"
+                        android:backgroundTint="#E2F0FF"
+                        style="?android:attr/buttonBarButtonStyle" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/crypto_circle_button_bg"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/rate_btn"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_star_24"
+                        android:backgroundTint="#E2F0FF"
+                        style="?android:attr/buttonBarButtonStyle" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/crypto_circle_button_bg"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/about_btn"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_info"
+                        android:backgroundTint="#E2F0FF"
+                        style="?android:attr/buttonBarButtonStyle" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"/>
+
+    <com.applovin.mediation.ads.MaxAdView
+        xmlns:maxads="http://schemas.applovin.com/android/1.0"
+        android:id="@+id/MaxAdView"
+        maxads:adUnitId="YOUR_ID_HERE"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</RelativeLayout>

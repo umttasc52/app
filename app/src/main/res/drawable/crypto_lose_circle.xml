@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dış halka -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#FF5252"
+                android:endColor="#D32F2F"
+                android:angle="135" />
+            <size android:width="110dp" android:height="110dp" />
+        </shape>
+    </item>
+
+    <!-- İç halka -->
+    <item android:left="6dp" android:top="6dp" android:right="6dp" android:bottom="6dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#162540"
+                android:centerColor="#0F1C31"
+                android:endColor="#071428"
+                android:angle="135" />
+        </shape>
+    </item>
+
+    <!-- İç ışıltı -->
+    <item android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="50dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#30FF5252"
+                android:endColor="#00000000"
+                android:angle="270" />
+        </shape>
+    </item>
+
+    <item android:left="20dp" android:top="20dp" android:right="20dp" android:bottom="20dp">
+        <rotate android:fromDegrees="45">
+            <shape android:shape="line">
+                <stroke android:color="#30FF5252" android:width="2dp" />
+                <size android:width="70dp" android:height="1dp" />
+            </shape>
+        </rotate>
+    </item>
+
+    <item android:left="20dp" android:top="20dp" android:right="20dp" android:bottom="20dp">
+        <rotate android:fromDegrees="135">
+            <shape android:shape="line">
+                <stroke android:color="#30FF5252" android:width="2dp" />
+                <size android:width="70dp" android:height="1dp" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>
